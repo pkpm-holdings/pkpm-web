@@ -278,6 +278,11 @@
     .news-featured p{font-size:0.88rem;color:rgba(255,255,255,0.52);line-height:1.82;font-weight:300;margin-bottom:1.5rem;}
     .news-featured-img{overflow:hidden;min-height:320px;}
     .news-featured-img img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#0a1828;}
+    /* Full-width banner variant for a self-contained 16:9 flyer */
+    .news-featured-banner{grid-template-columns:1fr;max-width:940px;margin:0 auto;}
+    .news-featured-banner .news-featured-img{min-height:0;aspect-ratio:16/9;}
+    .news-featured-banner .news-featured-img img{object-fit:cover;background:transparent;}
+    .news-featured-banner .news-featured-text{padding:2rem 2.75rem 2.5rem;}
     .news-card{background:rgba(255,255,255,0.03);border:1px solid rgba(32,128,216,0.14);border-radius:12px;padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;transition:all 0.28s;position:relative;overflow:hidden;}
     .news-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
     .news-card:hover{background:rgba(255,255,255,0.055);border-color:rgba(32,128,216,0.35);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3);}
@@ -564,7 +569,10 @@
     <p class="section-sub">From portfolio milestones to industry recognition — stay current with PKPM Holdings.</p>
     <div class="news-grid">
 
-      <div class="news-card news-featured">
+      <div class="news-card news-featured news-featured-banner">
+        <div class="news-featured-img">
+          <img src="HSS-HIDA-Chicago-2026.jpg" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" />
+        </div>
         <div class="news-featured-text">
           <div class="news-featured-badge">Most Recent</div>
           <div class="news-featured-source">September 2026 &nbsp;·&nbsp; HSS Medical Supply on LinkedIn</div>
@@ -574,9 +582,6 @@
             View on LinkedIn
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
-        </div>
-        <div class="news-featured-img">
-          <img src="HSS-HIDA-Chicago-2026.jpg" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" />
         </div>
       </div>
 
