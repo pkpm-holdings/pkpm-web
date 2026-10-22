@@ -283,8 +283,10 @@
     .news-featured-banner .news-featured-img{min-height:0;aspect-ratio:16/9;}
     .news-featured-banner .news-featured-img img{object-fit:cover;background:transparent;}
     .news-featured-banner .news-featured-text{padding:2rem 2.75rem 2.5rem;}
-    .news-featured-banner.news-featured-logo .news-featured-img{aspect-ratio:auto;background:#fff;padding:2.5rem 3rem;}
-    .news-featured-banner.news-featured-logo .news-featured-img img{height:auto;max-width:620px;margin:0 auto;object-fit:contain;}
+    .news-card-thumb{margin:-1.8rem -1.8rem 0.4rem;aspect-ratio:16/9;overflow:hidden;background:#0a1828;}
+    .news-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+    .news-card-thumb-logo{background:#fff;display:flex;align-items:center;justify-content:center;padding:1.5rem;}
+    .news-card-thumb-logo img{height:auto;object-fit:contain;}
     .news-card{background:rgba(255,255,255,0.03);border:1px solid rgba(32,128,216,0.14);border-radius:12px;padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;transition:all 0.28s;position:relative;overflow:hidden;}
     .news-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
     .news-card:hover{background:rgba(255,255,255,0.055);border-color:rgba(32,128,216,0.35);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3);}
@@ -571,36 +573,22 @@
     <p class="section-sub">From portfolio milestones to industry recognition — stay current with PKPM Holdings.</p>
     <div class="news-grid">
 
-      <div class="news-card news-featured news-featured-banner news-featured-logo">
-        <div class="news-featured-img">
-          <img src="Ally-Technical.jpg" alt="Ally Technical logo — Uptime By Design" />
-        </div>
-        <div class="news-featured-text">
-          <div class="news-featured-badge">Most Recent</div>
-          <div class="news-featured-source">October 2026 &nbsp;·&nbsp; 1TECHNATION</div>
-          <h3>Pete McCann, Partner at PKPM Holdings assisted in the transaction and is now a Board Member of Ally Technical.</h3>
-          <p>Althea US Inc. has rebranded as Ally Technical alongside a new investment from FFL Partners. Headquartered in Nashville, Ally Technical pairs nationwide field service with in-house parts testing, board-level and depot repair, replacement parts, and technical training, building on its contrast injector expertise to serve a wider range of medical devices.</p>
-          <a class="news-card-link" href="https://1technation.com/althea-us-inc-announces-rebrand-to-ally-technical/" target="_blank" rel="noopener noreferrer">
-            Read Full Article
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
-        </div>
+      <div class="news-card">
+        <div class="news-card-thumb news-card-thumb-logo"><img src="Ally-Technical.jpg" alt="Ally Technical logo — Uptime By Design" /></div>
+        <span class="news-card-tag">Portfolio</span>
+        <div class="news-card-date">October 2026 &nbsp;·&nbsp; 1TECHNATION</div>
+        <h3>Pete McCann, Partner at PKPM Holdings assisted in the transaction and is now a Board Member of Ally Technical.</h3>
+        <p>Althea US Inc. has rebranded as Ally Technical alongside a new investment from FFL Partners, expanding its medical device service, repair, and parts business.</p>
+        <a class="news-card-link" href="https://1technation.com/althea-us-inc-announces-rebrand-to-ally-technical/" target="_blank" rel="noopener noreferrer">Read Full Article <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
 
-      <div class="news-card news-featured news-featured-banner">
-        <div class="news-featured-img">
-          <img src="HSS-HIDA-Chicago-2026.jpg" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" />
-        </div>
-        <div class="news-featured-text">
-          <div class="news-featured-badge">Event</div>
-          <div class="news-featured-source">September 2026 &nbsp;·&nbsp; HSS Medical Supply on LinkedIn</div>
-          <h3>HSS Medical Supply Heading to the HIDA Streamlining Healthcare Expo in Chicago</h3>
-          <p>HSS Medical Supply is attending the HIDA Streamlining Healthcare Expo &amp; Business Exchange, September 22–24 in Chicago, IL. Co-Founder Patrick Kiss, CPA and Calvin Adam will both be speaking on the panel "AI in Practice for Healthcare Distributors," sharing how HSS is using technology and AI to enhance the customer experience.</p>
-          <a class="news-card-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7506713897543057408/" target="_blank" rel="noopener noreferrer">
-            View on LinkedIn
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
-        </div>
+      <div class="news-card">
+        <div class="news-card-thumb"><img src="HSS-HIDA-Chicago-2026.jpg" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" /></div>
+        <span class="news-card-tag">Event</span>
+        <div class="news-card-date">September 2026</div>
+        <h3>HSS Medical Supply Heading to the HIDA Streamlining Healthcare Expo in Chicago</h3>
+        <p>Co-Founder Patrick Kiss, CPA and Calvin Adam will speak on the panel "AI in Practice for Healthcare Distributors" at the HIDA Expo, September 22–24 in Chicago, IL.</p>
+        <a class="news-card-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7506713897543057408/" target="_blank" rel="noopener noreferrer">View on LinkedIn <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
 
       <div class="news-card">
