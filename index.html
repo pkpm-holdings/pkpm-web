@@ -172,6 +172,8 @@
     .form-group textarea{resize:vertical;min-height:140px;}
     .form-group select option{background:#0e2240;color:#fff;}
     .form-submit{background:var(--accent);color:#fff;border:none;padding:1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:999px;cursor:pointer;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;align-self:flex-start;box-shadow:0 4px 20px rgba(32,128,216,0.4);}
+    .form-status{font-size:0.9rem;color:#7fd3a0;margin:0;}
+    .form-status.error{color:#ff9c9c;}
     .form-submit:hover{background:#1870c4;transform:translateY(-2px);box-shadow:0 8px 28px rgba(32,128,216,0.5);}
     @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:3rem;} .form-row{grid-template-columns:1fr;} .contact-form{padding:1.75rem;}}
 
@@ -658,13 +660,8 @@
         <div class="contact-item"><div class="contact-icon" style="font-size:0.75rem;font-weight:600;color:var(--accent);">CALL</div><div><h4>Phone</h4><p><a href="tel:+16317868414" style="color:inherit;text-decoration:none;">+1 (631) 786-8414</a></p></div></div>
         <div class="contact-item"><div class="contact-icon" style="font-size:0.75rem;font-weight:600;color:var(--accent);">LOC</div><div><h4>Location</h4><p>New York, United States</p></div></div>
       </div>
-   <form class="contact-form reveal" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="b05159ac-591d-4c04-bc6f-a02215a987f5">
-        <input type="hidden" name="cc" value="patrick.kiss@pkpmholdings.com,calvin.adam@pkpmholdings.com,peter.mccann@pkpmholdings.com">
-        <input type="hidden" name="subject" value="New Contact Form Submission – PKPM Holdings">
-        <input type="hidden" name="replyto" value="$email">
-        <input type="hidden" name="autoresponse" value="Thank you for your interest in PKPM Holdings. We've received your message and will be in touch within 24–48 hours.">
-        <input type="checkbox" name="botcheck" style="display:none">
+   <form class="contact-form reveal" action="/api/contact" method="POST">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
         <div class="form-row">
           <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
@@ -682,6 +679,7 @@
         </div>
         <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your goals..." required></textarea></div>
         <button type="submit" class="form-submit">Send Message</button>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
   </section>
 
@@ -1119,12 +1117,46 @@
   initReveals();
   initClientCarousel();
   // Form submission feedback
-document.querySelector('form.contact-form')?.addEventListener('submit', function() {
-  const btn = this.querySelector('.form-submit');
-  btn.textContent = 'Sending…';
-  btn.style.opacity = '0.7';
-  btn.disabled = true;
-});
+(function() {
+  const form = document.querySelector('form.contact-form');
+  if (!form) return;
+  const btn = form.querySelector('.form-submit');
+  const status = form.querySelector('.form-status');
+  const showStatus = (msg, isError) => {
+    status.textContent = msg;
+    status.classList.toggle('error', !!isError);
+    status.hidden = false;
+  };
+  // No-JS fallback redirects back with ?contact=sent|error
+  const result = new URLSearchParams(location.search).get('contact');
+  if (result === 'sent') showStatus("Thank you — your message has been sent. We'll be in touch within 24–48 hours.");
+  if (result === 'error') showStatus('Sorry, something went wrong. Please email patrick.kiss@pkpmholdings.com.', true);
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    btn.textContent = 'Sending…';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+    status.hidden = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Something went wrong.');
+      form.reset();
+      showStatus("Thank you — your message has been sent. We'll be in touch within 24–48 hours.");
+    } catch (err) {
+      showStatus((err.message || 'Something went wrong.') + ' You can also email patrick.kiss@pkpmholdings.com.', true);
+    } finally {
+      btn.textContent = 'Send Message';
+      btn.style.opacity = '';
+      btn.disabled = false;
+    }
+  });
+})();
 </script>
 </body>
 </html>
