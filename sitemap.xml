@@ -13,4 +13,28 @@
     <image:image><image:loc>https://pkpmholdings.com/images/team/peter-mccann-jr.jpg</image:loc></image:image>
     <image:image><image:loc>https://pkpmholdings.com/images/team/mason-solomon.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://pkpmholdings.com/services/healthcare-m-and-a-advisory/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/services/healthcare-operations-consulting/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/services/ai-solutions/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/services/cpa-tax-advisory/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

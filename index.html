@@ -245,6 +245,8 @@
     .svc-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(32,128,216,0.35);line-height:1;margin-bottom:0.75rem;}
     .svc-line{width:32px;height:2px;background:var(--accent);margin-bottom:1.1rem;border-radius:2px;}
     .svc-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:0.7rem;line-height:1.25;}
+    .svc-more{display:inline-block;margin-top:1.1rem;font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(32,128,216,0.35);padding-bottom:2px;}
+    .svc-more:hover{color:#fff;border-color:#fff;}
     .svc-desc{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.85;font-weight:300;}
 
     /* CONTACT */
@@ -615,10 +617,10 @@
       <p class="section-sub">Comprehensive consulting, advisory, and licensed CPA services designed for high-growth, investment-backed organizations.</p>
     </div>
     <div class="services-grid reveal">
-      <div class="service-card"><div class="svc-num">01</div><div class="svc-line"></div><div class="svc-title">Strategic Advisory Services</div><p class="svc-desc">Exit readiness, M&amp;A execution, and deal positioning for business owners pursuing a sale to private equity, family offices, or strategic acquirers. From financial prep to buyer outreach and close.</p></div>
-      <div class="service-card"><div class="svc-num">02</div><div class="svc-line"></div><div class="svc-title">Healthcare Operations Consulting</div><p class="svc-desc">Hands-on operational improvement across MSO, pharma, distribution, and life sciences organizations. We embed with your team to drive efficiency, growth, and execution at every level.</p></div>
-      <div class="service-card"><div class="svc-num">03</div><div class="svc-line"></div><div class="svc-title">AI-Enabled Solutions</div><p class="svc-desc">Custom AI tools and process automation for healthcare and business operations. We design and deploy internal and external solutions that reduce cost, improve accuracy, and scale with your organization.</p></div>
-      <div class="service-card"><div class="svc-num">04</div><div class="svc-line"></div><div class="svc-title">CPA Advisory &amp; Tax Services</div><p class="svc-desc">Licensed CPA-led tax planning, preparation, and compliance rooted in Big 4 experience. Covering federal, state, and multi-entity structures for businesses, PE-backed platforms, and high-net-worth individuals.</p></div>
+      <div class="service-card"><div class="svc-num">01</div><div class="svc-line"></div><div class="svc-title">Strategic Advisory Services</div><p class="svc-desc">Exit readiness, M&amp;A execution, and deal positioning for business owners pursuing a sale to private equity, family offices, or strategic acquirers. From financial prep to buyer outreach and close.</p><a class="svc-more" href="/services/healthcare-m-and-a-advisory/">Learn more &rarr;</a></div>
+      <div class="service-card"><div class="svc-num">02</div><div class="svc-line"></div><div class="svc-title">Healthcare Operations Consulting</div><p class="svc-desc">Hands-on operational improvement across MSO, pharma, distribution, and life sciences organizations. We embed with your team to drive efficiency, growth, and execution at every level.</p><a class="svc-more" href="/services/healthcare-operations-consulting/">Learn more &rarr;</a></div>
+      <div class="service-card"><div class="svc-num">03</div><div class="svc-line"></div><div class="svc-title">AI-Enabled Solutions</div><p class="svc-desc">Custom AI tools and process automation for healthcare and business operations. We design and deploy internal and external solutions that reduce cost, improve accuracy, and scale with your organization.</p><a class="svc-more" href="/services/ai-solutions/">Learn more &rarr;</a></div>
+      <div class="service-card"><div class="svc-num">04</div><div class="svc-line"></div><div class="svc-title">CPA Advisory &amp; Tax Services</div><p class="svc-desc">Licensed CPA-led tax planning, preparation, and compliance rooted in Big 4 experience. Covering federal, state, and multi-entity structures for businesses, PE-backed platforms, and high-net-worth individuals.</p><a class="svc-more" href="/services/cpa-tax-advisory/">Learn more &rarr;</a></div>
     </div>
   </section>
 
@@ -1211,7 +1213,10 @@
     document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 60);
   });
   window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
+    // Support deep links from inner pages, e.g. /#contact or /#services
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+    if (target) { setTimeout(() => target.scrollIntoView({behavior:'smooth'}), 150); }
+    else { window.scrollTo(0, 0); }
   });
   initReveals();
   initClientCarousel();
