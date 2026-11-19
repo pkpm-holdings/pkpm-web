@@ -99,6 +99,7 @@
     gtag('config', 'G-Y1PB7ZX9ZB');
   </script>
 
+  <link rel="preload" as="image" href="/images/hero-nyc.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -116,8 +117,9 @@
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
 
     /* GLOBAL VIDEO BG */
-    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;}
-    #global-video-bg video{width:100%;height:100%;object-fit:cover;object-position:center;}
+    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#0c1c30 url('/images/hero-nyc.webp') center/cover no-repeat;}
+    #global-video-bg video{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1s ease;}
+    #global-video-bg video.playing{opacity:1;}
 
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:flex-end;padding:1rem 6vw;background:transparent;box-shadow:none;transition:padding 0.3s ease,background 0.3s ease,box-shadow 0.3s ease;}
@@ -463,10 +465,10 @@
 <body>
 
 <div id="global-video-bg">
-  <video autoplay loop muted playsinline>
-    <source src="https://videos.pexels.com/video-files/5796436/5796436-hd_1920_1080_30fps.mp4" type="video/mp4">
-    <source src="https://videos.pexels.com/video-files/6641647/6641647-hd_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
+  <!-- Still image shows instantly (CSS background); the 2 MB video loads
+       only after the page has finished loading, and not on phones or for
+       visitors with data-saver / reduced-motion turned on. -->
+  <video loop muted playsinline preload="none" data-src="/media/hero-nyc.mp4" aria-hidden="true"></video>
 </div>
 
 <nav>
@@ -1223,6 +1225,18 @@
   });
   initReveals();
   initClientCarousel();
+
+  // Background video: load after everything else, desktop/tablet only
+  window.addEventListener('load', () => {
+    const v = document.querySelector('#global-video-bg video');
+    if (!v) return;
+    const conn = navigator.connection || {};
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.innerWidth < 768 || conn.saveData || reduceMotion) return;
+    v.src = v.dataset.src;
+    v.addEventListener('playing', () => v.classList.add('playing'), { once: true });
+    v.play().catch(() => {});
+  });
   // Form submission feedback
 document.querySelector('form.contact-form')?.addEventListener('submit', function() {
   const btn = this.querySelector('.form-submit');
