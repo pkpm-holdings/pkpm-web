@@ -99,7 +99,6 @@
     gtag('config', 'G-Y1PB7ZX9ZB');
   </script>
 
-  <link rel="preload" as="image" href="/images/hero-nyc.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -117,9 +116,17 @@
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
 
     /* GLOBAL VIDEO BG */
-    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#0c1c30 url('/images/hero-nyc.webp') center/cover no-repeat;}
-    #global-video-bg video{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1s ease;}
-    #global-video-bg video.playing{opacity:1;}
+    /* Page background: the logo's navy -> steel-blue gradient */
+    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(115deg,#05101f 0%,#0b2847 45%,#1d4a78 80%,#46719c 100%);}
+
+    /* Hero waves: the PKPM mark's own wave stripes, enlarged, fading in left to right */
+    .hero-waves{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;}
+    .hero-waves svg{position:absolute;right:-4vw;bottom:-6vh;width:min(112vw,2000px);height:auto;}
+    .hero-waves path{fill:#ffffff;}
+    .hero-waves .waves{opacity:0;clip-path:inset(0 100% 0 0);animation:wavesIn 2.6s cubic-bezier(.22,.61,.36,1) .4s forwards;}
+    @keyframes wavesIn{to{opacity:.17;clip-path:inset(0 0 0 0);}}
+    @media (max-width:700px){.hero-waves svg{width:210vw;right:-55vw;bottom:-2vh;}}
+    @media (prefers-reduced-motion:reduce){.hero-waves .waves{animation:none;opacity:.17;clip-path:none;}}
 
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:flex-end;padding:1rem 6vw;background:transparent;box-shadow:none;transition:padding 0.3s ease,background 0.3s ease,box-shadow 0.3s ease;}
@@ -465,10 +472,6 @@
 <body>
 
 <div id="global-video-bg">
-  <!-- Still image shows instantly (CSS background); the 2 MB video loads
-       only after the page has finished loading, and not on phones or for
-       visitors with data-saver / reduced-motion turned on. -->
-  <video loop muted playsinline preload="none" data-src="/media/hero-nyc.mp4" aria-hidden="true"></video>
 </div>
 
 <nav>
@@ -488,6 +491,7 @@
 
   <section class="hero">
     <div class="hero-overlay"></div>
+    <div class="hero-waves" aria-hidden="true"><svg viewBox="0 0 1909 1073" preserveAspectRatio="xMaxYMax meet"><g class="waves"><path d="M1899,712 L1885,705 L1869,701 L1847,702 L1827,710 L1804,725 L1638,850 L1619,858 L1605,861 L1582,861 L1559,853 L1542,837 L1536,827 L1530,810 L1530,869 L1535,884 L1545,900 L1555,910 L1571,919 L1583,922 L1604,922 L1621,917 L1657,895 L1827,765 L1845,758 L1866,757 L1873,759 L1899,773Z"/><path d="M1899,402 L1889,396 L1870,390 L1848,390 L1826,398 L1652,532 L1630,545 L1612,551 L1599,553 L1581,552 L1568,548 L1559,543 L1541,524 L1534,509 L1533,503 L1532,544 L1530,545 L1513,520 L1494,504 L1473,496 L1456,496 L1442,500 L1429,507 L1269,627 L1133,732 L1112,744 L1091,750 L1071,750 L1049,742 L1043,738 L1028,721 L1023,710 L1019,694 L1019,763 L1032,784 L1047,798 L1063,807 L1077,811 L1092,812 L1113,805 L1156,778 L1232,718 L1432,567 L1447,561 L1471,559 L1484,562 L1498,569 L1517,588 L1529,612 L1531,566 L1548,592 L1560,603 L1570,609 L1588,614 L1606,614 L1620,610 L1650,593 L1822,461 L1840,453 L1863,450 L1884,455 L1899,463Z"/><path d="M1521,223 L1510,208 L1503,202 L1491,195 L1480,192 L1454,192 L1437,197 L1421,205 L1393,224 L1129,425 L1116,433 L1096,440 L1076,441 L1055,435 L1039,423 L1026,403 L1012,356 L1005,342 L992,328 L975,319 L955,315 L934,320 L917,328 L892,344 L719,476 L10,1007 L10,1062 L11,1063 L910,390 L930,381 L950,376 L966,376 L985,383 L997,392 L1010,408 L1017,425 L1019,443 L1024,461 L1029,471 L1040,485 L1054,495 L1069,501 L1087,502 L1102,499 L1129,487 L1144,477 L1432,259 L1443,253 L1457,249 L1477,249 L1496,256 L1513,271 L1520,281 L1529,300 L1530,245Z"/><path d="M1018,126 L1019,131Z"/><path d="M1003,33 L991,20 L985,16 L973,11 L964,10 L943,11 L929,15 L899,33 L10,700 L10,757 L919,78 L931,72 L947,68 L960,68 L979,73 L993,81 L1005,92 L1015,108 L1019,123 L1019,63Z"/></g></svg></div>
     <div class="hero-content">
       <div class="hero-text">
         <img src="images/pkpm-logo-white.png" alt="PKPM Holdings" class="hero-brand-logo" width="840" height="671" fetchpriority="high">
@@ -1225,18 +1229,6 @@
   });
   initReveals();
   initClientCarousel();
-
-  // Background video: load after everything else, desktop/tablet only
-  window.addEventListener('load', () => {
-    const v = document.querySelector('#global-video-bg video');
-    if (!v) return;
-    const conn = navigator.connection || {};
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (window.innerWidth < 768 || conn.saveData || reduceMotion) return;
-    v.src = v.dataset.src;
-    v.addEventListener('playing', () => v.classList.add('playing'), { once: true });
-    v.play().catch(() => {});
-  });
   // Form submission feedback
 document.querySelector('form.contact-form')?.addEventListener('submit', function() {
   const btn = this.querySelector('.form-submit');
