@@ -225,6 +225,9 @@
     .portfolio-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;}
     .portfolio-card:hover{box-shadow:0 32px 80px rgba(12,28,48,0.12);transform:translateY(-5px);border-color:rgba(32,128,216,0.3);}
     .portfolio-card-header{background:linear-gradient(135deg,#0e2240 0%,#13305a 100%);padding:2.5rem 2rem;display:flex;align-items:center;justify-content:center;min-height:160px;border-bottom:1px solid var(--border);overflow:hidden;}
+    .portfolio-logo-tile{background:#fff;border-radius:14px;padding:1.1rem 2rem;box-shadow:0 12px 40px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;}
+    .portfolio-logo-tile img{display:block;height:84px;width:auto;max-width:100%;}
+    @media(max-width:600px){.portfolio-logo-tile{padding:0.9rem 1.2rem;}.portfolio-logo-tile img{height:60px;}}
     .portfolio-card-body{padding:2rem 2rem 1.5rem;}
     .portfolio-tag{display:inline-block;font-size:0.67rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:0.3rem 0.8rem;border-radius:999px;margin-bottom:0.9rem;border:1px solid rgba(32,128,216,0.15);}
     .portfolio-card-body h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:400;color:var(--navy);margin-bottom:0.6rem;line-height:1.2;}
@@ -600,7 +603,7 @@
     <div class="portfolio-grid reveal">
       <div class="portfolio-card" onclick="showPage('hss')">
         <div class="portfolio-card-header">
-          
+          <div class="portfolio-logo-tile"><img loading="lazy" decoding="async" src="images/hss-medical-supply-logo-wide.webp" alt="HSS Medical Supply logo" width="520" height="172"></div>
         </div>
         <div class="portfolio-card-body">
           <span class="portfolio-tag">Medical Distribution</span>
