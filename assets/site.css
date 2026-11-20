@@ -177,3 +177,26 @@ footer{background:var(--navy);padding:2.75rem var(--gutter);display:flex;align-i
 .news-item-body{padding:1.5rem 1.6rem 1.8rem;display:flex;flex-direction:column;gap:0.5rem;}
 .news-item-body .date{font-size:var(--fs-meta);color:var(--muted);}
 .news-item-body p{font-size:var(--fs-small);line-height:1.6;color:var(--muted);margin-top:0.2rem;}
+
+/* ---------- Team profile pages ---------- */
+.profile-hero{display:grid;grid-template-columns:260px minmax(0,1fr);gap:3.5rem;align-items:center;}
+.profile-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 60px rgba(0,0,0,0.35);display:block;}
+.profile-hero h1{margin-bottom:0.8rem;}
+.profile-cred{font-size:var(--fs-small);line-height:1.6;color:rgba(255,255,255,0.75);max-width:760px;margin-bottom:1.3rem;}
+.profile-tags{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;}
+.profile-tags li{font-size:var(--fs-meta);color:rgba(255,255,255,0.88);background:rgba(32,128,216,0.18);border:1px solid rgba(32,128,216,0.35);border-radius:999px;padding:0.3rem 0.9rem;line-height:1.4;}
+.profile-li{display:inline-flex;align-items:center;gap:0.5rem;}
+@media(max-width:760px){.profile-hero{grid-template-columns:1fr;gap:2rem;}.profile-photo{max-width:220px;}}
+
+.timeline{list-style:none;max-width:860px;border-left:2px solid var(--border);margin-left:0.4rem;}
+.timeline li{position:relative;padding:0 0 2.4rem 2rem;}
+.timeline li:last-child{padding-bottom:0;}
+.timeline li::before{content:'';position:absolute;left:-7px;top:0.45rem;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);}
+.timeline-date{font-size:var(--fs-meta);color:var(--muted);margin-bottom:0.2rem;}
+.timeline h3{font-family:var(--serif);font-size:var(--fs-h3);font-weight:500;line-height:1.25;color:var(--navy);}
+.timeline-co{font-size:var(--fs-small);font-weight:600;color:var(--accent);margin:0.15rem 0 0.6rem;}
+.timeline p{font-size:var(--fs-small);line-height:1.7;color:var(--muted);margin:0;max-width:780px;}
+
+.team-card{display:flex;align-items:center;gap:1.1rem;}
+.team-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;}
+.team-card strong{font-size:1.35rem;margin-bottom:0.15rem;}

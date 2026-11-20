@@ -58,15 +58,15 @@
         "sameAs": ["https://www.linkedin.com/company/pkpmholdings/"],
         "knowsAbout": ["Healthcare mergers and acquisitions", "Exit readiness", "Private equity", "Healthcare operations", "Medical supply distribution", "GPO contracting", "AI process automation", "Tax planning"],
         "founder": [
-          { "@id": "https://pkpmholdings.com/#peter-mccann" },
-          { "@id": "https://pkpmholdings.com/#patrick-kiss" }
+          { "@id": "https://pkpmholdings.com/team/peter-mccann/#person" },
+          { "@id": "https://pkpmholdings.com/team/patrick-kiss/#person" }
         ],
         "employee": [
-          { "@type": "Person", "@id": "https://pkpmholdings.com/#peter-mccann", "name": "Peter McCann", "jobTitle": "Partner & Co-Founder", "image": "https://pkpmholdings.com/images/team/peter-mccann.jpg", "sameAs": ["https://www.linkedin.com/in/petermccannny/"] },
-          { "@type": "Person", "@id": "https://pkpmholdings.com/#patrick-kiss", "name": "Patrick Kiss", "honorificSuffix": "CPA", "jobTitle": "Managing Partner & Co-Founder", "image": "https://pkpmholdings.com/images/team/patrick-kiss-cpa.jpg", "sameAs": ["https://www.linkedin.com/in/patrick-kiss-cpa-238521144/"] },
-          { "@type": "Person", "name": "Calvin Adam", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/calvin-adam.jpg", "sameAs": ["https://www.linkedin.com/in/calvinadam/"] },
-          { "@type": "Person", "name": "Peter McCann Jr.", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/peter-mccann-jr.jpg", "sameAs": ["https://www.linkedin.com/in/peterrmccannny/"] },
-          { "@type": "Person", "name": "Mason Solomon", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/mason-solomon.jpg", "sameAs": ["https://www.linkedin.com/in/mason-solomon-657b2238b/"] }
+          { "@type": "Person", "@id": "https://pkpmholdings.com/team/peter-mccann/#person", "url": "https://pkpmholdings.com/team/peter-mccann/", "name": "Peter McCann", "jobTitle": "Partner & Co-Founder", "image": "https://pkpmholdings.com/images/team/peter-mccann.jpg", "sameAs": ["https://www.linkedin.com/in/petermccannny/"] },
+          { "@type": "Person", "@id": "https://pkpmholdings.com/team/patrick-kiss/#person", "url": "https://pkpmholdings.com/team/patrick-kiss/", "name": "Patrick Kiss", "honorificSuffix": "CPA", "jobTitle": "Managing Partner & Co-Founder", "image": "https://pkpmholdings.com/images/team/patrick-kiss-cpa.jpg", "sameAs": ["https://www.linkedin.com/in/patrick-kiss-cpa-238521144/"] },
+          { "@type": "Person", "@id": "https://pkpmholdings.com/team/calvin-adam/#person", "url": "https://pkpmholdings.com/team/calvin-adam/", "name": "Calvin Adam", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/calvin-adam.jpg", "sameAs": ["https://www.linkedin.com/in/calvinadam/"] },
+          { "@type": "Person", "@id": "https://pkpmholdings.com/team/peter-mccann-jr/#person", "url": "https://pkpmholdings.com/team/peter-mccann-jr/", "name": "Peter McCann Jr.", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/peter-mccann-jr.jpg", "sameAs": ["https://www.linkedin.com/in/peterrmccannny/"] },
+          { "@type": "Person", "@id": "https://pkpmholdings.com/team/mason-solomon/#person", "url": "https://pkpmholdings.com/team/mason-solomon/", "name": "Mason Solomon", "jobTitle": "Associate", "image": "https://pkpmholdings.com/images/team/mason-solomon.jpg", "sameAs": ["https://www.linkedin.com/in/mason-solomon-657b2238b/"] }
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -201,6 +201,7 @@
     .team-photo-card:hover .member-label{opacity:1;}
     .member-label-cta{color:#fff;font-size:0.8rem;letter-spacing:0.05em;border:1px solid rgba(255,255,255,0.6);padding:0.4rem 1rem;border-radius:20px;}
     .team-card-body{padding:2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:0.5rem;}
+    .team-card-name a{color:inherit;text-decoration:none;}
     .team-card-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:#fff;}
     .team-card-role{font-size:0.65rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);font-weight:500;}
     .team-card-blurb{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:520px;padding-top:0.4rem;}
@@ -527,61 +528,61 @@
     <h2 class="section-title reveal">Meet the Team</h2>
     <div class="team-banner-wrap reveal">
       <div class="team-photos-grid">
-        <div class="team-photo-card" onclick="if(!event.target.closest('a')) showPage('peter')">
+        <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/peter-mccann/'">
           <div class="team-photo-img-wrap">
             <img loading="lazy" decoding="async" src="images/team/peter-mccann.jpg" class="team-banner-img" alt="Peter McCann">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
-            <div class="team-card-name">Peter McCann</div>
+            <div class="team-card-name"><a href="/team/peter-mccann/">Peter McCann</a></div>
             <div class="team-card-role">Partner &amp; Co-Founder</div>
             <p class="team-card-blurb">30+ years in healthcare. C-Suite executive, entrepreneur, and PE operator with 75+ transactions.</p>
             <a href="https://www.linkedin.com/in/petermccannny/" target="_blank" rel="noopener noreferrer" class="team-card-li" onclick="event.stopPropagation()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
           </div>
         </div>
-        <div class="team-photo-card" onclick="if(!event.target.closest('a')) showPage('patrick')">
+        <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/patrick-kiss/'">
           <div class="team-photo-img-wrap">
             <img loading="lazy" decoding="async" src="images/team/patrick-kiss-cpa.jpg" class="team-banner-img" alt="Patrick Kiss, CPA">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
-            <div class="team-card-name">Patrick Kiss, CPA</div>
+            <div class="team-card-name"><a href="/team/patrick-kiss/">Patrick Kiss, CPA</a></div>
             <div class="team-card-role">Managing Partner &amp; Co-Founder</div>
             <p class="team-card-blurb">CPA with Big 4 experience at PwC. Led $29M healthcare acquisitions at Growth Orthopedics (Trivest Partners).</p>
             <a href="https://www.linkedin.com/in/patrick-kiss-cpa-238521144/" target="_blank" rel="noopener noreferrer" class="team-card-li" onclick="event.stopPropagation()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
           </div>
         </div>
-        <div class="team-photo-card" onclick="if(!event.target.closest('a')) showPage('calvin')">
+        <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/calvin-adam/'">
           <div class="team-photo-img-wrap">
             <img loading="lazy" decoding="async" src="images/team/calvin-adam.jpg" alt="Calvin Adam" class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
-            <div class="team-card-name">Calvin Adam</div>
+            <div class="team-card-name"><a href="/team/calvin-adam/">Calvin Adam</a></div>
             <div class="team-card-role">Associate</div>
             <p class="team-card-blurb">Accounting senior at Baruch College managing GPO contracts and building AI tools at HSS Medical Supply.</p>
             <a href="https://www.linkedin.com/in/calvinadam/" target="_blank" rel="noopener noreferrer" class="team-card-li" onclick="event.stopPropagation()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
           </div>
         </div>
-        <div class="team-photo-card" onclick="if(!event.target.closest('a')) showPage('peter-jr')">
+        <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/peter-mccann-jr/'">
           <div class="team-photo-img-wrap">
             <img loading="lazy" decoding="async" src="images/team/peter-mccann-jr.jpg" alt="Peter McCann Jr." class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
-            <div class="team-card-name">Peter McCann Jr.</div>
+            <div class="team-card-name"><a href="/team/peter-mccann-jr/">Peter McCann Jr.</a></div>
             <div class="team-card-role">Associate</div>
             <p class="team-card-blurb">Business Entrepreneurship student at Quinnipiac University developing hands-on expertise across PKPM's advisory practice.</p>
             <a href="https://www.linkedin.com/in/peterrmccannny/" target="_blank" rel="noopener noreferrer" class="team-card-li" onclick="event.stopPropagation()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
           </div>
         </div>
-        <div class="team-photo-card" onclick="if(!event.target.closest('a')) showPage('mason')">
+        <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/mason-solomon/'">
           <div class="team-photo-img-wrap">
             <img loading="lazy" decoding="async" src="images/team/mason-solomon.jpg" alt="Mason Solomon" class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
-            <div class="team-card-name">Mason Solomon</div>
+            <div class="team-card-name"><a href="/team/mason-solomon/">Mason Solomon</a></div>
             <div class="team-card-role">Associate</div>
             <p class="team-card-blurb">Wesleyan University sophomore (Economics, Math & CS) and NCAA lacrosse athlete building AI tools at HSS Medical Supply.</p>
             <a href="https://www.linkedin.com/in/mason-solomon-657b2238b/" target="_blank" rel="noopener noreferrer" class="team-card-li" onclick="event.stopPropagation()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
@@ -848,209 +849,6 @@
       <a onclick="navigateTo('contact')">Contact</a>
       <a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
     </div>
-  </footer>
-</div>
-
-<!-- ══════════ PETER BIO ══════════ -->
-<div id="page-peter" class="page bio-page">
-  <div class="bio-hero">
-    <button class="bio-back" onclick="navigateTo('team')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Team</button>
-    <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/team/peter-mccann.jpg" alt="Peter McCann" class="bio-photo">
-      <div class="bio-hero-text">
-        <div class="bio-role">Partner &amp; Co-Founder</div>
-        <h2>Peter McCann</h2>
-        <div class="bio-cred">Hofstra University, B.B.A. &nbsp;&middot;&nbsp; New York City Metropolitan Area</div>
-        <div class="bio-tags"><span class="bio-tag">30+ Yrs Healthcare</span><span class="bio-tag">Private Equity</span><span class="bio-tag">CEO / COO / President</span><span class="bio-tag">75+ Transactions</span><span class="bio-tag">7 Start-Ups</span><span class="bio-tag">5 Board Roles</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="bio-body"><div class="bio-body-inner">
-    <div class="bio-section">
-      <div class="bio-section-label">About Peter</div>
-      <p>Peter McCann is a seasoned C-Suite executive, entrepreneur, and Private Equity operator with over 30 years of experience in the healthcare sector. As Co-Founder and Partner of PKPM Holdings, Peter brings an unparalleled track record of building, scaling, and exiting healthcare organizations across products, services, MSO/DSO, life sciences, and pharmaceuticals.</p>
-      <p>Throughout his career Peter has served in 9 senior leadership roles — CEO, COO, President, and EVP — across both corporate and PE-backed environments. He has launched 7 start-ups, led 5 corporate turnarounds (all successfully exited to strategics), served on 5 Boards of Directors, and completed more than 75 healthcare transactions through 15+ private equity engagements.</p>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Career Highlights</div>
-      <div class="bio-highlights">
-        <div class="bio-highlight"><div class="stat">30<span>+</span></div><div class="stat-label">Years in Healthcare</div></div>
-        <div class="bio-highlight"><div class="stat">75<span>+</span></div><div class="stat-label">Healthcare Transactions</div></div>
-        <div class="bio-highlight"><div class="stat">9</div><div class="stat-label">Senior Leadership Roles</div></div>
-        <div class="bio-highlight"><div class="stat">15<span>+</span></div><div class="stat-label">PE Engagements</div></div>
-        <div class="bio-highlight"><div class="stat">7</div><div class="stat-label">Start-Ups Founded</div></div>
-        <div class="bio-highlight"><div class="stat">5</div><div class="stat-label">Board of Director Roles</div></div>
-      </div>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Experience</div>
-      <div class="bio-timeline">
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Partner &amp; Co-Founder</h4><div class="job-co">PKPM Holdings, LLC</div><div class="job-date">May 2025 – Present</div><p>Healthcare holdings organization with equity positions in several organizations. Advisor to Private Equity and Venture Capital investors. Designed and launched healthcare start-ups in orthopedics, distribution, HTM, and consulting.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>President &amp; Co-Founder</h4><div class="job-co">HSS Medical Supply</div><div class="job-date">May 2025 – Present</div><p>Co-founded a full-service medical supply distribution business serving the New York City metropolitan area.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Chief Executive Officer &amp; Investor / Board Member</h4><div class="job-co">Growth Orthopedics (Trivest Partners)</div><div class="job-date">February 2021 – June 2025</div><p>Led a national orthopedic MSO platform. Drove the mission to bring quality orthopedic care, physical therapy, and specialty surgery to patients across the United States. Transitioned to Board Member in 2025 to support pathway to exit.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>President</h4><div class="job-co">PMC Consulting Group</div><div class="job-date">October 2011 – May 2025 (13+ years)</div><p>Founded and led a healthcare advisory firm leveraging PE expertise to partner growth companies with relevant private equity organizations. Served healthcare systems, mid-size organizations, family-owned businesses, PE-backed investments, and start-ups.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Vice President of Healthcare / EVP</h4><div class="job-co">Compass Group / Lombart Instrument (Atlantic Street Capital)</div><div class="job-date">2013 – 2018</div><p>Built a national healthcare sales team driving revenue from $1M to $34M in 18 months. Successfully integrated Modern Medical Systems through acquisition.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Director of National Medical Sales</h4><div class="job-co">Henry Schein, Inc.</div><div class="job-date">September 2006 – December 2012</div><p>Managed a 200-person sales team producing $400M+ in annual sales. Drove 30%+ revenue growth and 45%+ operating income increase. Executed 14 M&amp;A integrations over 6 years. Drove medical device and equipment sales to $180M.</p></div></div>
-      </div>
-    </div>
-  </div></div>
-  <footer>
-    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.png" alt="PKPM Holdings" width="840" height="671"></a>
-    <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
-    <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
-  </footer>
-</div>
-
-<!-- ══════════ PATRICK BIO ══════════ -->
-<div id="page-patrick" class="page bio-page">
-  <div class="bio-hero">
-    <button class="bio-back" onclick="navigateTo('team')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Team</button>
-    <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/team/patrick-kiss-cpa.jpg" alt="Patrick Kiss, CPA" class="bio-photo">
-      <div class="bio-hero-text">
-        <div class="bio-role">Managing Partner &amp; Co-Founder</div>
-        <h2>Patrick Kiss, CPA</h2>
-        <div class="bio-cred">SUNY Geneseo, B.S. Accounting &nbsp;&middot;&nbsp; Bay Shore, New York</div>
-        <div class="bio-tags"><span class="bio-tag">CPA</span><span class="bio-tag">M&amp;A</span><span class="bio-tag">Healthcare Finance</span><span class="bio-tag">PwC Alumni</span><span class="bio-tag">Project Management</span><span class="bio-tag">Software Integration</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="bio-body"><div class="bio-body-inner">
-    <div class="bio-section">
-      <div class="bio-section-label">About Patrick</div>
-      <p>Patrick Kiss is a Certified Public Accountant and Co-Founder of PKPM Holdings, bringing a rare combination of Big 4 audit experience, healthcare finance expertise, and hands-on M&amp;A execution to every client engagement. Patrick co-founded PKPM Holdings with the mission of providing excellent business consulting services and building a full-service medical supply distribution business.</p>
-      <p>With a foundation built at PwC and honed through progressive leadership at Growth Orthopedics — a Trivest Partners-backed orthopedic MSO — Patrick brings the financial rigor of institutional consulting to healthcare organizations of all sizes.</p>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Key Accomplishments</div>
-      <div class="bio-highlights">
-        <div class="bio-highlight"><div class="stat">$29<span>M</span></div><div class="stat-label">Carve-Out Led</div></div>
-        <div class="bio-highlight"><div class="stat">$25<span>M</span></div><div class="stat-label">Practice Due Diligence</div></div>
-        <div class="bio-highlight"><div class="stat">$24<span>M</span></div><div class="stat-label">ASC Relocation PM</div></div>
-        <div class="bio-highlight"><div class="stat">20<span>+</span></div><div class="stat-label">Financial Models Built</div></div>
-        <div class="bio-highlight"><div class="stat">7</div><div class="stat-label">LOIs Presented</div></div>
-        <div class="bio-highlight"><div class="stat">3</div><div class="stat-label">Transactions Closed</div></div>
-      </div>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Experience</div>
-      <div class="bio-timeline">
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Partner &amp; Co-Founder</h4><div class="job-co">PKPM Holdings, LLC</div><div class="job-date">March 2024 – Present</div><p>Co-founded an organization delivering excellent business consulting services. Created strategic vision to attract clients and consulting partnerships. Built the framework for a full-service medical supply distribution business.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Vice President &amp; Co-Founder</h4><div class="job-co">HSS Medical Supply</div><div class="job-date">May 2025 – Present</div><p>Co-founded a full-service medical supply distribution business, building operational and distribution infrastructure across the New York metropolitan area.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Director of Integrations</h4><div class="job-co">Growth Orthopedics (Trivest Partners)</div><div class="job-date">March 2023 – June 2025</div><p>Led cross-functional team through $29M carve-out acquisition. Managed due diligence on a $25M orthopedic practice. Financial project manager on $24M ASC relocation. Built 20+ financial models resulting in 7 LOIs and 3 closed transactions.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Accounting Manager</h4><div class="job-co">Growth Orthopedics</div><div class="job-date">August 2022 – March 2023</div><p>Implemented Sage Intacct across the platform. Improved internal controls leading to a successful audit. Created physician compensation models resulting in six new orthopedic physician hires.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Financial Analyst</h4><div class="job-co">Growth Orthopedics</div><div class="job-date">September 2021 – August 2022</div><p>Prepared financial models for physician practices and surgery centers. Presented findings to PE deal teams, physician leadership, and lenders.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Assurance Associate</h4><div class="job-co">PwC</div><div class="job-date">September 2020 – August 2021</div><p>Audited financial statements of insurance companies. Utilized Alteryx, Tableau, and UiPath for data synthesis and automation. Analyzed internal controls and communicated improvements to clients.</p></div></div>
-      </div>
-    </div>
-  </div></div>
-  <footer>
-    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.png" alt="PKPM Holdings" width="840" height="671"></a>
-    <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
-    <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
-  </footer>
-</div>
-
-<!-- ══════════ CALVIN BIO ══════════ -->
-<div id="page-calvin" class="page bio-page">
-  <div class="bio-hero">
-    <button class="bio-back" onclick="navigateTo('team')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Team</button>
-    <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/team/calvin-adam.jpg" alt="Calvin Adam" class="bio-photo">
-      <div class="bio-hero-text">
-        <div class="bio-role">Associate</div>
-        <h2>Calvin Adam</h2>
-        <div class="bio-cred">Baruch College (CUNY), B.S. Accounting (in progress) &nbsp;&middot;&nbsp; Minor in Communications &nbsp;&middot;&nbsp; West Islip, New York</div>
-        <div class="bio-tags"><span class="bio-tag">Accounting</span><span class="bio-tag">Tax</span><span class="bio-tag">GPO Contracts</span><span class="bio-tag">AI Process Improvement</span><span class="bio-tag">Healthcare Operations</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="bio-body"><div class="bio-body-inner">
-    <div class="bio-section">
-      <div class="bio-section-label">About Calvin</div>
-      <p>Calvin Adam is a senior at Baruch College majoring in Accounting with a minor in Communications. As an Associate at PKPM Holdings, Calvin brings a sharp analytical foundation and a forward-thinking approach to healthcare operations and advisory work.</p>
-      <p>At Frankel Loughran Starr &amp; Vallone, Calvin supports the firm's private client services practice, working on tax compliance and planning engagements for high-net-worth individuals, families, and closely held entities.</p>
-      <p>At HSS Medical Supply, Calvin leads efforts to improve operational efficiency by deploying AI-driven tools across internal and external processes. He also manages GPO contract relationships, working to increase gross margin and deliver better pricing outcomes for customers.</p>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Experience</div>
-      <div class="bio-timeline">
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Associate</h4><div class="job-co">PKPM Holdings, LLC</div><div class="job-date">2025 – Present</div><p>Supports PKPM's advisory and M&amp;A practice across client engagements, operational analysis, and business development initiatives.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Private Client Services Intern</h4><div class="job-co">Frankel Loughran Starr &amp; Vallone</div><div class="job-date">2026 – Present</div><p>Supports the firm's private client services practice, assisting with tax compliance and planning engagements for high-net-worth individuals, families, and closely held entities.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Pricing &amp; Contracts / Operations</h4><div class="job-co">HSS Medical Supply</div><div class="job-date">2025 – Present</div><p>Drives operational efficiency through AI-powered process improvements. Manages GPO contracts to improve gross margin and deliver competitive pricing to customers across the HSS distribution network.</p></div></div>
-      </div>
-    </div>
-  </div></div>
-  <footer>
-    <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
-    <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
-  </footer>
-</div>
-
-<!-- ══════════ PETER JR BIO ══════════ -->
-<div id="page-peter-jr" class="page bio-page">
-  <div class="bio-hero">
-    <button class="bio-back" onclick="navigateTo('team')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Team</button>
-    <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/team/peter-mccann-jr.jpg" alt="Peter McCann Jr." class="bio-photo">
-      <div class="bio-hero-text">
-        <div class="bio-role">Associate</div>
-        <h2>Peter McCann Jr.</h2>
-        <div class="bio-cred">Quinnipiac University, B.S. Business Entrepreneurship (in progress) &nbsp;&middot;&nbsp; New York Metropolitan Area</div>
-        <div class="bio-tags"><span class="bio-tag">Entrepreneurship</span><span class="bio-tag">Healthcare</span><span class="bio-tag">M&amp;A</span><span class="bio-tag">Business Development</span><span class="bio-tag">Deal Sourcing</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="bio-body"><div class="bio-body-inner">
-    <div class="bio-section">
-      <div class="bio-section-label">About Peter</div>
-      <p>Peter McCann Jr. is a student at Quinnipiac University majoring in Business Entrepreneurship. Growing up in a family deeply rooted in healthcare entrepreneurship, Peter brings firsthand knowledge of what it takes to build, operate, and position healthcare businesses for long-term success.</p>
-      <p>As an Associate at PKPM Holdings, Peter contributes to deal sourcing, client operations, and strategic advisory engagements alongside the senior leadership team.</p>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Experience</div>
-      <div class="bio-timeline">
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Associate</h4><div class="job-co">PKPM Holdings, LLC</div><div class="job-date">2025 – Present</div><p>Supports PKPM's advisory and M&amp;A practice with exposure across deal sourcing, client operations, and business development.</p></div></div>
-      </div>
-    </div>
-  </div></div>
-  <footer>
-    <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
-    <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
-  </footer>
-</div>
-
-<!-- ══════════ MASON BIO ══════════ -->
-<div id="page-mason" class="page bio-page">
-  <div class="bio-hero">
-    <button class="bio-back" onclick="navigateTo('team')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Team</button>
-    <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/team/mason-solomon.jpg" alt="Mason Solomon" class="bio-photo">
-      <div class="bio-hero-text">
-        <div class="bio-role">Associate</div>
-        <h2>Mason Solomon</h2>
-        <div class="bio-cred">Wesleyan University, Triple Major: Economics, Mathematics &amp; Computer Science (in progress) &nbsp;&middot;&nbsp; NCAA Division III Lacrosse</div>
-        <div class="bio-tags"><span class="bio-tag">Economics</span><span class="bio-tag">Mathematics</span><span class="bio-tag">Computer Science</span><span class="bio-tag">Data Analysis</span><span class="bio-tag">NCAA Athlete</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="bio-body"><div class="bio-body-inner">
-    <div class="bio-section">
-      <div class="bio-section-label">About Mason</div>
-      <p>Mason Solomon is a sophomore at Wesleyan University pursuing a rare triple major in Economics, Mathematics, and Computer Science. A NCAA Division III lacrosse athlete, Mason combines elite competitive discipline with a rigorous academic foundation uniquely suited to data-driven advisory and financial analysis.</p>
-      <p>As an Associate at PKPM Holdings, Mason brings strong quantitative skills and a sharp analytical mindset to the team's healthcare advisory and M&amp;A practice. He also works at HSS Medical Supply developing AI tools to improve internal and external operational processes.</p>
-    </div>
-    <div class="bio-section">
-      <div class="bio-section-label">Experience</div>
-      <div class="bio-timeline">
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>Associate</h4><div class="job-co">PKPM Holdings, LLC</div><div class="job-date">2025 – Present</div><p>Contributes analytical and quantitative support across PKPM's advisory and M&amp;A engagements.</p></div></div>
-        <div class="bio-job"><div class="bio-job-dot"></div><div class="bio-job-content"><h4>AI Tools &amp; Operations</h4><div class="job-co">HSS Medical Supply</div><div class="job-date">2025 – Present</div><p>Develops and deploys AI-powered tools to improve internal and external operational processes across the HSS distribution network.</p></div></div>
-      </div>
-    </div>
-  </div></div>
-  <footer>
-    <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
-    <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
   </footer>
 </div>
 
