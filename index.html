@@ -99,7 +99,7 @@
     gtag('config', 'G-Y1PB7ZX9ZB');
   </script>
 
-  <link rel="preload" as="image" href="/images/hero-nyc.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/hero-nyc.avif" type="image/avif" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -117,7 +117,7 @@
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
 
     /* GLOBAL VIDEO BG */
-    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#0c1c30 url('/images/hero-nyc.webp') center/cover no-repeat;}
+    #global-video-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#0c1c30 url('/images/hero-nyc.webp') center/cover no-repeat;background-image:image-set(url('/images/hero-nyc.avif') type('image/avif'),url('/images/hero-nyc.webp') type('image/webp'));}
     #global-video-bg video{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1s ease;}
     #global-video-bg video.playing{opacity:1;}
 
@@ -493,7 +493,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-text">
-        <img src="images/pkpm-logo-white.png" alt="PKPM Holdings" class="hero-brand-logo" width="840" height="671" fetchpriority="high">
+        <img src="images/pkpm-logo-white.webp" alt="PKPM Holdings" class="hero-brand-logo" width="840" height="671" fetchpriority="high">
         <div class="eyebrow">Strategic Advisory Services</div>
         <h1>Healthcare &amp; <em>Business</em> Advisory</h1>
         <p>PKPM Holdings is a full-service consulting and M&amp;A advisory firm serving healthcare organizations and business owners. We help our clients operate at their highest level — and when the time is right, position and execute a successful sale to private equity, family offices, or strategic acquirers.</p>
@@ -530,7 +530,7 @@
       <div class="team-photos-grid">
         <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/peter-mccann/'">
           <div class="team-photo-img-wrap">
-            <img loading="lazy" decoding="async" src="images/team/peter-mccann.jpg" class="team-banner-img" alt="Peter McCann">
+            <img loading="lazy" decoding="async" src="images/team/peter-mccann.webp" class="team-banner-img" alt="Peter McCann">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
@@ -542,7 +542,7 @@
         </div>
         <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/patrick-kiss/'">
           <div class="team-photo-img-wrap">
-            <img loading="lazy" decoding="async" src="images/team/patrick-kiss-cpa.jpg" class="team-banner-img" alt="Patrick Kiss, CPA">
+            <img loading="lazy" decoding="async" src="images/team/patrick-kiss-cpa.webp" class="team-banner-img" alt="Patrick Kiss, CPA">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
@@ -554,7 +554,7 @@
         </div>
         <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/calvin-adam/'">
           <div class="team-photo-img-wrap">
-            <img loading="lazy" decoding="async" src="images/team/calvin-adam.jpg" alt="Calvin Adam" class="team-banner-img">
+            <img loading="lazy" decoding="async" src="images/team/calvin-adam.webp" alt="Calvin Adam" class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
@@ -566,7 +566,7 @@
         </div>
         <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/peter-mccann-jr/'">
           <div class="team-photo-img-wrap">
-            <img loading="lazy" decoding="async" src="images/team/peter-mccann-jr.jpg" alt="Peter McCann Jr." class="team-banner-img">
+            <img loading="lazy" decoding="async" src="images/team/peter-mccann-jr.webp" alt="Peter McCann Jr." class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
@@ -578,7 +578,7 @@
         </div>
         <div class="team-photo-card" onclick="if(!event.target.closest('a')) location.href='/team/mason-solomon/'">
           <div class="team-photo-img-wrap">
-            <img loading="lazy" decoding="async" src="images/team/mason-solomon.jpg" alt="Mason Solomon" class="team-banner-img">
+            <img loading="lazy" decoding="async" src="images/team/mason-solomon.webp" alt="Mason Solomon" class="team-banner-img">
             <div class="member-label"><span class="member-label-cta">Click to view full bio</span></div>
           </div>
           <div class="team-card-body">
@@ -642,27 +642,27 @@
           <p>Private equity firm partnering with healthcare, business services, and technology companies.</p>
         </div>
         <div class="client-card">
-          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/trivest-partners.png" alt="Trivest Partners logo" style="max-height:80px;"></div>
+          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/trivest-partners.webp" alt="Trivest Partners logo" style="max-height:80px;"></div>
           <h3>Trivest Partners</h3>
           <p>Growth-focused investor supporting founder-led and PE-backed businesses.</p>
         </div>
         <div class="client-card">
-          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/court-square-capital-partners.png" alt="Court Square Capital Partners logo"></div>
+          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/court-square-capital-partners.webp" alt="Court Square Capital Partners logo"></div>
           <h3>Court Square Capital Partners</h3>
           <p>Middle-market private equity firm with deep healthcare and services expertise.</p>
         </div>
         <div class="client-card">
-          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/atlantic-street-capital.png" alt="Atlantic Street Capital logo"></div>
+          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/atlantic-street-capital.webp" alt="Atlantic Street Capital logo"></div>
           <h3>Atlantic Street Capital</h3>
           <p>Strategic investor focused on healthcare services, business transformation, and growth.</p>
         </div>
         <div class="client-card">
-          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/sheridan-capital-partners.jpg" alt="Sheridan Capital Partners logo"></div>
+          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/sheridan-capital-partners.webp" alt="Sheridan Capital Partners logo"></div>
           <h3>Sheridan Capital Partners</h3>
           <p>Healthcare operating partner advising platform growth and operational performance.</p>
         </div>
         <div class="client-card">
-          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/water-street.png" alt="Water Street logo"></div>
+          <div class="client-logo"><img loading="lazy" decoding="async" src="images/clients/water-street.webp" alt="Water Street logo"></div>
           <h3>Water Street</h3>
           <p>Health-focused private equity firm investing in services, care delivery, and platform expansion.</p>
         </div>
@@ -687,7 +687,7 @@
       </div>
 
       <div class="news-card">
-        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="HSS-HIDA-Chicago-2026.jpg" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" /></div>
+        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="/images/news/hss-hida-chicago-2026.webp" alt="HSS Medical Supply attending the HIDA Streamlining Healthcare Expo & Business Exchange in Chicago, September 22-24" /></div>
         <span class="news-card-tag">Event</span>
         <div class="news-card-date">September 2026</div>
         <h3>HSS Medical Supply Heading to the HIDA Streamlining Healthcare Expo in Chicago</h3>
@@ -696,7 +696,7 @@
       </div>
 
       <div class="news-card">
-        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="/images/news/hss-medical-supply-repertoire-magazine.jpg" alt="Pete McCann and Patrick Kiss, CPA featured in Repertoire Magazine" /></div>
+        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="/images/news/hss-medical-supply-repertoire-magazine.webp" alt="Pete McCann and Patrick Kiss, CPA featured in Repertoire Magazine" /></div>
         <span class="news-card-tag">Press</span>
         <div class="news-card-date">February 2026</div>
         <h3>HSS Medical Supply Featured in Repertoire Magazine</h3>
@@ -705,7 +705,7 @@
       </div>
 
       <div class="news-card">
-        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="/images/news/libn-30-under-30-patrick-kiss.jpg" alt="Patrick Kiss, CPA, LIBN 30 Under 30 Emerging Leader" /></div>
+        <div class="news-card-thumb"><img loading="lazy" decoding="async" src="/images/news/libn-30-under-30-patrick-kiss.webp" alt="Patrick Kiss, CPA, LIBN 30 Under 30 Emerging Leader" /></div>
         <span class="news-card-tag">Recognition</span>
         <div class="news-card-date">August 2026</div>
         <h3>Patrick Kiss, CPA Named an LIBN 30 Under 30 Emerging Leader</h3>
@@ -838,7 +838,7 @@
   </div>
 
   <footer>
-    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.png" alt="PKPM Holdings" width="840" height="671"></a>
+    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.webp" alt="PKPM Holdings" width="840" height="671"></a>
     <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
     <div class="footer-links">
       <a onclick="navigateTo('about')">About</a>
@@ -857,7 +857,7 @@
   <div class="bio-hero">
     <button class="bio-back" onclick="showPage('home');scrollTo('portfolio')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>Back to Portfolio</button>
     <div class="bio-hero-inner">
-      <img loading="lazy" decoding="async" src="images/hss-medical-supply-logo.png" alt="HSS Medical Supply" class="bio-hero-logo">
+      <img loading="lazy" decoding="async" src="images/hss-medical-supply-logo.webp" alt="HSS Medical Supply" class="bio-hero-logo">
       <div class="bio-hero-text">
         <div class="bio-role">Portfolio Company &nbsp;&middot;&nbsp; Medical Distribution</div>
         <h2>HSS Medical Supply</h2>
@@ -930,7 +930,7 @@
   </div></div>
 
   <footer>
-    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.png" alt="PKPM Holdings" width="840" height="671"></a>
+    <a class="footer-logo" onclick="showPage('home');window.scrollTo(0,0)"><img loading="lazy" decoding="async" src="images/pkpm-logo-white.webp" alt="PKPM Holdings" width="840" height="671"></a>
     <p class="footer-copy">&copy; 2026 PKPM Holdings. All rights reserved.</p>
     <div class="footer-links"><a onclick="navigateTo('about')">About</a><a onclick="navigateTo('team')">Team</a><a onclick="navigateTo('portfolio')">Portfolio</a><a onclick="navigateTo('services')">Services</a><a onclick="navigateTo('contact')">Contact</a><a href="https://www.linkedin.com/company/pkpmholdings/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
   </footer>
