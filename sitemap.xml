@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://pkpmholdings.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://pkpmholdings.com/images/og-image.jpg</image:loc></image:image>
@@ -36,6 +36,41 @@
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/team/peter-mccann/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://pkpmholdings.com/images/team/peter-mccann.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/team/patrick-kiss/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://pkpmholdings.com/images/team/patrick-kiss-cpa.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/team/calvin-adam/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://pkpmholdings.com/images/team/calvin-adam.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/team/peter-mccann-jr/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://pkpmholdings.com/images/team/peter-mccann-jr.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://pkpmholdings.com/team/mason-solomon/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://pkpmholdings.com/images/team/mason-solomon.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://pkpmholdings.com/news/</loc>
