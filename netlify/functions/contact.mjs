@@ -23,6 +23,8 @@ const EMAIL_RE = /^[^\s@<>,;"]+@[^\s@<>,;"]+\.[^\s@<>,;"]+$/;
 const MIN_FILL_MS = 3000;
 const MAX_FILL_MS = 24 * 60 * 60 * 1000;
 const MAX_LINKS = 2;
+// A spam bot signs its names with a run of capitals glued to the end, e.g. "JuanEvageGM".
+const BOT_NAME_RE = /[a-z][A-Z]{2,}$/;
 
 export const config = { path: "/api/contact" };
 
@@ -62,6 +64,7 @@ export default async (req) => {
   if (links > MAX_LINKS || /https?:|www\./i.test(data.first_name + data.last_name + data.organization)) {
     return reply(200, { ok: true });
   }
+  if (BOT_NAME_RE.test(data.first_name) || BOT_NAME_RE.test(data.last_name)) return reply(200, { ok: true });
 
   if (!(await emailDomainAcceptsMail(data.email))) {
     return reply(400, { ok: false, error: "That email address doesn't look valid. Please check it and try again." });
