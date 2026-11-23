@@ -8,6 +8,8 @@
 //   CONTACT_TO_EMAILS   (optional) Comma-separated recipients. Defaults below.
 //   CONTACT_AUTORESPONSE (optional) "false" turns off the thank-you email to the sender.
 
+import { promises as dns } from "node:dns";
+
 const DEFAULT_RECIPIENTS = [
   "patrick.kiss@pkpmholdings.com",
   "peter.mccann@pkpmholdings.com",
@@ -16,6 +18,11 @@ const DEFAULT_RECIPIENTS = [
 
 const LIMITS = { first_name: 100, last_name: 100, email: 200, organization: 200, area_of_interest: 100, message: 5000 };
 const EMAIL_RE = /^[^\s@<>,;"]+@[^\s@<>,;"]+\.[^\s@<>,;"]+$/;
+// The page stamps the form with its load time; bots that post straight to the endpoint have no stamp,
+// and scripts that fill the form in under a few seconds are not people.
+const MIN_FILL_MS = 3000;
+const MAX_FILL_MS = 24 * 60 * 60 * 1000;
+const MAX_LINKS = 2;
 
 export const config = { path: "/api/contact" };
 
@@ -35,14 +42,29 @@ export default async (req) => {
     return reply(400, { ok: false, error: "Could not read the form." });
   }
 
-  // Honeypot: real visitors never see or tick this box. Pretend success to bots.
-  if (fields.botcheck) return reply(200, { ok: true });
+  // Honeypots: real visitors never see these fields. Pretend success to bots.
+  if (fields.botcheck || fields.website) return reply(200, { ok: true });
+
+  const started = Number(fields.form_started);
+  if (!started) return reply(400, { ok: false, error: "Please enable JavaScript to send the form, or email us directly." });
+  const elapsed = Date.now() - started;
+  if (elapsed < MIN_FILL_MS || elapsed > MAX_FILL_MS) return reply(200, { ok: true });
 
   const data = {};
   for (const [key, max] of Object.entries(LIMITS)) data[key] = String(fields[key] ?? "").trim().slice(0, max);
 
   if (!data.first_name || !data.last_name || !data.message || !EMAIL_RE.test(data.email)) {
     return reply(400, { ok: false, error: "Please fill in your name, a valid email and a message." });
+  }
+
+  // Link-stuffed messages and URLs in name fields are spam.
+  const links = (data.message.match(/https?:\/\/|www\./gi) || []).length;
+  if (links > MAX_LINKS || /https?:|www\./i.test(data.first_name + data.last_name + data.organization)) {
+    return reply(200, { ok: true });
+  }
+
+  if (!(await emailDomainAcceptsMail(data.email))) {
+    return reply(400, { ok: false, error: "That email address doesn't look valid. Please check it and try again." });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -90,6 +112,25 @@ async function readFields(req) {
   if (type.includes("application/json")) return await req.json();
   const form = await req.formData();
   return Object.fromEntries([...form.entries()].filter(([, v]) => typeof v === "string"));
+}
+
+// A made-up address usually sits on a domain with no mail server. Only a definite "no such domain"
+// or "no records" answer rejects; lookup timeouts and other DNS failures let the message through.
+async function emailDomainAcceptsMail(email) {
+  const domain = email.split("@").pop().toLowerCase();
+  const missing = (err) => ["ENOTFOUND", "ENODATA", "NXDOMAIN"].includes(err?.code);
+  try {
+    const mx = await dns.resolveMx(domain);
+    return mx.some((r) => r.exchange && r.exchange !== ".");
+  } catch (err) {
+    if (!missing(err)) return true;
+  }
+  // No MX record: mail falls back to the domain's own address.
+  try {
+    return (await dns.resolve4(domain)).length > 0;
+  } catch (err) {
+    return !missing(err);
+  }
 }
 
 async function sendEmail(apiKey, payload) {

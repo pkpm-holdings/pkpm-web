@@ -773,6 +773,8 @@
       </div>
    <form class="contact-form reveal" action="/api/contact" method="POST">
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+        <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="form_started">
         <div class="form-row">
           <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
@@ -1051,6 +1053,8 @@
   // Result of a no-JavaScript submit, which redirects back with ?contact=sent|error
   const result = new URLSearchParams(location.search).get('contact');
   if (result) show(result === 'sent' ? SENT : FAILED, result !== 'sent');
+  // Load time, checked by the server to turn away bots that skip the page or submit instantly
+  form.elements.form_started.value = Date.now();
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -1067,6 +1071,7 @@
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || FAILED);
       form.reset();
+      form.elements.form_started.value = Date.now();
       show(SENT);
     } catch (err) {
       show(err.message && err.message !== 'Failed to fetch' ? err.message : FAILED, true);
